@@ -1,0 +1,47 @@
+src/main/java/
+│
+├── com/example/FiltersForAirTravel
+│   ├── config
+│   │   ├── AppConfig.java
+│   │   ├── MessageSourceConfig.java
+│   │   ├── SecurityConfig.java
+│   │   └── SwaggerConfig.java
+│   ├── controller
+│   │   └── FlightController.java
+│   ├── dto
+│   │   ├── FlightDTO.java
+│   │   └── SegmentDTO.java
+│   ├── entity
+│   │   ├── Flight.java
+│   │   └── Segment.java
+│   ├── exception
+│   │   ├── FlightValidationException.java
+│   │   └── GlobalExceptionHandler.java
+│   ├── filter
+│   │   ├── ArrivalBeforeDepartureFilter.java
+│   │   ├── ArrivalRegionFilter.java
+│   │   ├── CompositeFlightFilter.java
+│   │   ├── DateRangeFlightFilter.java
+│   │   ├── DepartureBeforeNowFilter.java
+│   │   ├── DepartureRegionFilter.java
+│   │   ├── FlightFilter.java
+│   │   ├── GroundTimeExceedsTwoHoursFilter.java
+│   │   ├── GroundTimeLimitFilter.java
+│   │   ├── MaxFlightDurationFilter.java
+│   │   ├── MaxSegmentsFilter.java
+│   │   ├── MaxStopsFilter.java
+│   │   ├── MinFlightDurationFilter.java
+│   │   ├── MinSegmentsFilter.java
+│   │   ├── NightFlightFilter.java
+│   │   ├── StopDurationFilter.java
+│   │   └── WeekendFlightFilter.java
+│   ├── repository
+│   │   ├── FlightRepository.java
+│   │   └── FlightRepositoryImpl.java
+│   ├── service
+│   │   ├── impl
+│   │   │   └── FlightServiceImpl.java
+│   │   └── FlightService.java
+│   ├── utils
+│   │   └── FlightMapper.java
+│   ├── FiltersForAirTravel.java
