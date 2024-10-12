@@ -8,10 +8,33 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Фильтр {@code GroundTimeExceedsTwoHoursFilter} реализует интерфейс {@link FlightFilter}
+ * и предназначен для исключения полетов, где общее время на земле между сегментами превышает два часа.
+ *
+ * <p>Этот класс используется для фильтрации полетов по критерию общего времени ожидания на земле
+ * между сегментами рейсов. Если время ожидания превышает два часа, такой полет исключается из списка.
+ *
+ * <p>Логирование осуществляется с помощью {@link Logger}, чтобы отслеживать применение фильтра.
+ *
+ * @see FlightFilter
+ * @see Flight
+ * @see Segment
+ */
 public class GroundTimeExceedsTwoHoursFilter implements FlightFilter {
 
+    /**
+     * Логгер для отслеживания применения фильтра.
+     */
     private static final Logger logger = LoggerFactory.getLogger(GroundTimeExceedsTwoHoursFilter.class.getName());
 
+    /**
+     * Применяет фильтр ко списку полетов, исключая те, у которых общее время на земле
+     * между сегментами превышает два часа.
+     *
+     * @param flights список полетов для фильтрации
+     * @return отфильтрованный список полетов, у которых общее время ожидания на земле не превышает два часа
+     */
     @Override
     public List<Flight> filter(List<Flight> flights) {
         logger.info("Applying GroundTimeExceedsTwoHoursFilter");
@@ -20,6 +43,12 @@ public class GroundTimeExceedsTwoHoursFilter implements FlightFilter {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Рассчитывает общее время ожидания на земле между сегментами полета.
+     *
+     * @param flight полет, для которого рассчитывается общее время ожидания на земле
+     * @return общее время ожидания на земле в минутах
+     */
     private long calculateTotalGroundTime(Flight flight) {
         long totalGroundTime = 0;
         List<Segment> segments = flight.getSegments();
