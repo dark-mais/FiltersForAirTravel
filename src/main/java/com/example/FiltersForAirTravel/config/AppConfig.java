@@ -17,7 +17,7 @@ import java.util.List;
  * несколько отдельных фильтров, которые применяются последовательно.
  *
  * <p>Отмечен аннотацией {@link Configuration}, что указывает на то, что этот класс
- * содержит методы для создания бинов Spring.
+ * содержит методы для создания бинов Spring.G
  *
  * @see CompositeFlightFilter
  * @see FlightFilter
